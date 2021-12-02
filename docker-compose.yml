@@ -1,0 +1,22 @@
+version: "3"
+services:
+  coap_server:
+    build:
+      context: ./coapserver
+    container_name: coap_server
+    ports:
+      - 5684-5687:5684-5687
+    restart: always
+    tty: true
+
+  coap_proxy:
+    image: nginx:1.20
+    container_name: coap_proxy
+#    volumes:
+#      - ./nginx:/etc/nginx/conf.d
+    links:
+      - coap_server
+    ports:
+      - 5683:5683
+    restart: always
+    tty: true
