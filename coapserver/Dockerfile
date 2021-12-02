@@ -5,6 +5,6 @@ COPY target/lib /usr/src/coapserver/lib
 
 WORKDIR /usr/src/coapserver
 
-EXPOSE 5684-5687
+EXPOSE 5684-5687/udp
 
 CMD java -jar coapserver-1.0-SNAPSHOT.jar

@@ -5,18 +5,18 @@ services:
       context: ./coapserver
     container_name: coap_server
     ports:
-      - 5684-5687:5684-5687
+      - 5684-5687:5684-5687/udp
     restart: always
     tty: true
 
   coap_proxy:
     image: nginx:1.20
     container_name: coap_proxy
-#    volumes:
-#      - ./nginx:/etc/nginx/conf.d
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     links:
       - coap_server
     ports:
-      - 5683:5683
+      - 5683:5683/udp
     restart: always
     tty: true
