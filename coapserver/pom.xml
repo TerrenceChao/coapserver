@@ -40,6 +40,12 @@
             <artifactId>element-connector-tcp-netty</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.californium/scandium -->
+        <dependency>
+            <groupId>org.eclipse.californium</groupId>
+            <artifactId>scandium</artifactId>
+            <version>3.0.0</version>
+        </dependency>
 
 
 
